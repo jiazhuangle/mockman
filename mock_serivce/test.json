@@ -1,0 +1,30 @@
+{
+  "abc": {
+    "request": {
+      "method": "GET",
+      "uri": "abc",
+      "Content-Type": "application/json",
+      "text": {
+        "json": "{\"foo\":\"bar\"}"
+      }
+    },
+    "response": {
+      "text": "foo"
+    },
+    "description": "mock1 test"
+  },
+  "ab2c": {
+    "request": {
+      "method": "POST",
+      "uri": "ab2c",
+      "Content-Type": "text/html",
+      "text": {
+        "json": "{\"foo\":\"bar\"}"
+      }
+    },
+    "response": {
+      "text": "foo"
+    },
+    "description": "mock2 test"
+  }
+}
