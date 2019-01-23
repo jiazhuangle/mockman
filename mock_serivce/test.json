@@ -1,5 +1,5 @@
 {
-  "abc": {
+  "abc": [{
     "request": {
       "method": "GET",
       "uri": "abc",
@@ -12,7 +12,20 @@
       "text": "foo"
     },
     "description": "mock1 test"
-  },
+  },{
+    "request": {
+      "method": "GET",
+      "uri": "abc",
+      "Content-Type": "application/json",
+      "text": {
+        "json": "{\"foo\":\"bar\"}"
+      }
+    },
+    "response": {
+      "text": "foo"
+    },
+    "description": "mock1 test"
+  }],
   "ab2c": {
     "request": {
       "method": "POST",

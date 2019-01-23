@@ -1,0 +1,28 @@
+{
+  "login":[
+    {
+      "request":{
+        "method":"GET",
+        "Content-Type":"text/html",
+        "body":"name=abc&password=bar"
+      },
+      "response":{
+        "text":"access token error",
+        "code":403
+      },
+      "description":"a test mock"
+    },{
+      "request":{
+        "method":"GET",
+        "Content-Type":"text/html",
+        "body":"name=foo&password=bar"
+      },
+      "response":{
+        "text":"_request.body.text",
+        "code":403
+      },
+      "description":"a test mock"    }
+  ]
+
+
+}

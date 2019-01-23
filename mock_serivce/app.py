@@ -5,6 +5,8 @@ import json,sys,getopt
 conf_name = ''
 data_file={}
 
+# request.json 只能够接受方法为POST、Body为raw，header 内容为 application/json类型的数据
+
 
 app = Flask(__name__)
 
