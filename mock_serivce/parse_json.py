@@ -1,3 +1,5 @@
+from flask import Flask, render_template, make_response,current_app,request,redirect,url_for,Response
+from flask_api import status
 import json
 
 #
@@ -35,5 +37,40 @@ def read_file(filename):
 # a  = read_file('test.json')
 # print (a['abc']['request'])
 
+def test_read(filename):
+    with open(filename) as f:
+        load_dict = json.load(f)
+    return load_dict
 
+def test_parse(dict):
+    for k,v in dict.items():
+        print('urls is %s'%k)
+        for case in v:
+            print (case)
+            req = case['request']
+            resp = case['response']
+            #use for check
+
+def check_reqest(dict,request):
+    for k,v in dict.items():
+        if request.url == k:
+            for case in v:
+                req = case['request']
+                resp = case['response']
+                if req['method'] is not None :
+                    if req['method'] == request.method:
+                        if req['Content-Type'] is not None:
+                            if req['Content-Type'] == request.mimetype:
+                                return True, req, resp
+    return False, None, None
+
+def make_mock_response(req,resp):
+    resp=make_response(resp['text'])
+    if req['Content-type'] == 'application/json':
+        resp.headers['Content-type'] = 'application/json'
+
+    return resp status.HTTP_200_OK
+
+a = test_read('template.json')
+test_parse(a)
 
