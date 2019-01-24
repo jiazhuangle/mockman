@@ -1,0 +1,19 @@
+test:
+  -1:
+    request:
+      method:'GET'
+      Content-Type:'application/json'
+    response:
+      code:200
+      text:'{"foo":"bar"}'
+    description:'/test/1 get method return {"foo":"bar"}'
+  -2:
+    request:
+      method:'POST'
+      Content-Type:'text/html'
+      text:'name=a&&pass=b'
+    response:
+      text:'ok'$pass
+      code:200
+    description:'/test/2 post method return {"foo":"bar"}'
+
