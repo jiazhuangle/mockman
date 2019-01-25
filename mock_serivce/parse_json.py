@@ -69,7 +69,7 @@ def make_mock_response(req,resp):
     if req['Content-type'] == 'application/json':
         resp.headers['Content-type'] = 'application/json'
 
-    return resp status.HTTP_200_OK
+    return resp, status.HTTP_200_OK
 
 a = test_read('template.json')
 test_parse(a)
